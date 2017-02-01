@@ -2903,7 +2903,51 @@
       },
       "description": "The response of the List rule operation."
     },
+    "RuleCreateOrUpdateParameters": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Rule name."
+        },
+        "location": {
+          "type": "string",
+          "description": "Location of the resource."
+        },
+        "properties": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/RuleProperties"
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "description": "Parameters supplied to the CreateOrUpdate operation."
+    },
     "RuleResource": {
+      "properties": {
+        "filter": {
+          "$ref": "#/definitions/Filter",
+          "description": "Describes a filter expression that is evaluated against a BrokeredMessage."
+        },
+        "action": {
+          "$ref": "#/definitions/RuleAction",
+          "description": "Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation time of the rule.",
+          "readOnly": true
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "description": "Description of Rule Resource."
+    },	
+	"RuleResource_SQLFilter": {
       "properties": {
         "properties": {
           "x-ms-client-flatten": true,
@@ -2920,11 +2964,26 @@
     "Filter": {
       "type": "object",
       "properties": {        
-		"requiresPreprocessing": {
-          "type": "boolean",
-          "description": "true if the SQL filter expression requires preprocessing; otherwise, false. Currently always returns true."
-        },
-		"sqlExpression": {
+        "filterType": {
+		  "type": "string",
+		  "enum": [
+			"SqlFilter",
+			"CorrelationFilter",
+			"LambdaExpressionFilter"
+		  ],
+		  "x-ms-enum": {
+			"name": "filterType",
+			"modelAsString": false
+		  },
+		  "description": "Filter Types"
+		}
+      },
+      "description": "MessageDescribes a filter expression that is evaluated against a BrokeredMessage."
+    },
+    "SqlFilter": {
+      "type": "object",
+      "properties": {
+        "sqlExpression": {
           "type": "string",
           "description": "The SQL expression. e.g. MyProperty='ABC'"
         },
@@ -2933,15 +2992,19 @@
           "type": "integer",
 		  "default": 20,
           "description": "This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20."
-        },
-		"Parameters": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object"
-          },
-          "description": "The value of a filter expression."
-        },
-		"correlationId": {
+        }
+      },
+	  "allOf": [
+		{
+			"$ref" : "#/definitions/Filter"
+		}
+	  ],
+      "description": "Represents a filter which is a composition of an expression and an action that is executed in the pub/sub pipeline."
+    },
+    "CorrelationFilter": {
+      "type": "object",
+      "properties": {
+        "correlationId": {
           "type": "string",
           "description": "Identifier of the correlation."
         },
@@ -2974,30 +3037,44 @@
           "description": "Content type of the message."
         }
       },
-      "description": "MessageDescribes a filter expression that is evaluated against a BrokeredMessage."
-    },    
+	  "allOf": [
+		{
+		"$ref" : "#/definitions/Filter"
+		}
+	  ],
+      "description": "Represents the correlation filter expression."
+    },
     "RuleAction": {
       "type": "object",
       "properties": {
         "requiresPreprocessing": {
           "type": "boolean",
+		  "default": true,
           "description": "Value that indicates whether the rule action requires preprocessing."
-        },
-		"sqlExpression": {
+        }	
+      },
+      "description": "Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression."
+    },
+    "SqlRuleAction": {
+      "type": "object",
+      "properties": {
+        "sqlExpression": {
           "type": "string",
-          "description": "SQL expression for can be set as e.g. set FilterTag = 'true'/"
+          "description": "SQL expression. e.g. MyProperty='ABC'"
         },
         "compatibilityLevel": {
           "format": "int32",
           "type": "integer",
           "description": "This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20."
-        }		
+        }
       },
-      "required": [
-        "sqlExpression"
+	  "allOf": [
+        {
+          "$ref": "#/definitions/RuleAction"
+        }
       ],
-      "description": "Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression."
-    },    
+      "description": "Represents set of actions written in SQL language-based syntax that is performed against a ServiceBus.Messaging.BrokeredMessage "
+    },
     "RuleProperties": {
       "properties": {
         "filter": {
@@ -3006,6 +3083,25 @@
         },
         "action": {
           "$ref": "#/definitions/RuleAction",
+          "description": "Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation time of the rule.",
+          "readOnly": true
+        }
+      },
+      "description": "Description of Rule Resource."
+    },
+	"RuleProperties_SQL": {
+      "properties": {
+        "filter": {
+          "$ref": "#/definitions/SqlFilter",
+          "description": "Describes a filter expression that is evaluated against a BrokeredMessage."
+        },
+        "action": {
+          "$ref": "#/definitions/SqlRuleAction",
           "description": "Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression."
         },
         "createdAt": {
