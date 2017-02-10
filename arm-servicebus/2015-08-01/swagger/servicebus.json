@@ -158,6 +158,9 @@
             "schema": {
               "$ref": "#/definitions/NamespaceResource"
             }
+          },
+          "202": {
+            "description": "Namespace create or update request accepted."
           }
         },
         "x-ms-long-running-operation": true
@@ -1960,29 +1963,6 @@
           "type": "string",
           "description": "Provisioning state of the namespace."
         },
-        "status": {
-          "type": "string",
-          "description": "State of the namespace.",
-          "enum": [
-            "Unknown",
-            "Creating",
-            "Created",
-            "Activating",
-            "Enabling",
-            "Active",
-            "Disabling",
-            "Disabled",
-            "SoftDeleting",
-            "SoftDeleted",
-            "Removing",
-            "Removed",
-            "Failed"
-          ],
-          "x-ms-enum": {
-            "name": "NamespaceState",
-            "modelAsString": false
-          }
-        },
         "createdAt": {
           "type": "string",
           "format": "date-time",
@@ -1999,14 +1979,6 @@
           },
           "type": "string",
           "description": "Endpoint you can use to perform Service Bus operations."
-        },
-        "createACSNamespace": {
-          "type": "boolean",
-          "description": "Indicates whether to create an ACS namespace."
-        },
-        "enabled": {
-          "type": "boolean",
-          "description": "Specifies whether this instance is enabled."
         }
       },
       "description": "Properties of the namespace."
