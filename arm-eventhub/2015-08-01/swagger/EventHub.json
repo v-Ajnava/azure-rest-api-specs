@@ -1415,8 +1415,7 @@
           "description": "Name of this SKU.",
           "enum": [
             "Basic",
-            "Standard",
-            "Premium"
+            "Standard"
           ],
           "x-ms-enum": {
             "name": "SkuName",
