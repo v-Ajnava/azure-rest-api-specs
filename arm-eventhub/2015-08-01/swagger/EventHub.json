@@ -1521,22 +1521,27 @@
       "properties": {
         "primaryConnectionString": {
           "type": "string",
+		  "readOnly": true,
           "description": "Primary connection string of the created namespace authorization rule."
         },
         "secondaryConnectionString": {
           "type": "string",
+		  "readOnly": true,
           "description": "Secondary connection string of the created namespace authorization rule."
         },
         "primaryKey": {
           "type": "string",
+		  "readOnly": true,
           "description": "A base64-encoded 256-bit primary key for signing and validating the SAS token."
         },
         "secondaryKey": {
           "type": "string",
+		  "readOnly": true,
           "description": "A base64-encoded 256-bit primary key for signing and validating the SAS token."
         },
         "keyName": {
           "type": "string",
+		  "readOnly": true,
           "description": "A string that describes the authorization rule."
         }
       },
@@ -1588,6 +1593,7 @@
         "createdAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "Exact time the Event Hub was created."
         },
         "messageRetentionInDays": {
@@ -1602,6 +1608,7 @@
         },
         "partitionIds": {
           "type": "array",
+		  "readOnly": true,
           "items": {
             "type": "string"
           },
@@ -1628,6 +1635,7 @@
         },
         "updatedAt": {
           "type": "string",
+		  "readOnly": true,
           "format": "date-time",
           "description": "The exact time the message was updated."
         }
@@ -1692,15 +1700,18 @@
         "createdAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "Exact time the message was created."
         },
         "eventHubPath": {
           "type": "string",
+		  "readOnly": true,
           "description": "The path of the Event Hub."
         },
         "updatedAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "The exact time the message was updated."
         },
         "userMetadata": {

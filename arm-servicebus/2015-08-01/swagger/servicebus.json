@@ -1961,23 +1961,24 @@
       "properties": {
         "provisioningState": {
           "type": "string",
+		  "readOnly": true,
           "description": "Provisioning state of the namespace."
         },
         "createdAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "The time the namespace was created."
         },
         "updatedAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "The time the namespace was updated."
         },
         "serviceBusEndpoint": {
-          "externalDocs": {
-            "url": "http://msdn.microsoft.com/en-us/library/windowsazure/jj873988.aspx"
-          },
           "type": "string",
+		  "readOnly": true,
           "description": "Endpoint you can use to perform Service Bus operations."
         }
       },
@@ -2195,19 +2196,17 @@
         "accessedAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "Last time a message was sent, or the last time there was a receive request to this queue."
         },
         "autoDeleteOnIdle": {
           "type": "string",
           "description": "the TimeSpan idle interval after which the queue is automatically deleted. The minimum duration is 5 minutes."
         },
-        "entityAvailabilityStatus": {
-          "$ref": "#/definitions/EntityAvailabilityStatus",
-          "description": "Entity availability status for the queue."
-        },
         "createdAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "The exact time the message was created."
         },
         "defaultMessageTimeToLive": {
@@ -2234,10 +2233,6 @@
           "type": "boolean",
           "description": "A value that indicates whether the queue is to be partitioned across multiple message brokers."
         },
-        "isAnonymousAccessible": {
-          "type": "boolean",
-          "description": "A value that indicates whether the message is accessible anonymously."
-        },
         "maxDeliveryCount": {
           "format": "int32",
           "type": "integer",
@@ -2251,10 +2246,12 @@
         "messageCount": {
           "format": "int64",
           "type": "integer",
+		  "readOnly": true,
           "description": "The number of messages in the queue."
         },
         "countDetails": {
-          "$ref": "#/definitions/MessageCountDetails"
+          "readOnly": true,
+		  "$ref": "#/definitions/MessageCountDetails"
         },
         "requiresDuplicateDetection": {
           "type": "boolean",
@@ -2267,6 +2264,7 @@
         "sizeInBytes": {
           "format": "int64",
           "type": "integer",
+		  "readOnly": true,
           "description": "The size of the queue, in bytes."
         },
         "status": {
@@ -2280,6 +2278,7 @@
         "updatedAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "The exact time the message was updated."
         }
       }
@@ -2290,26 +2289,31 @@
         "activeMessageCount": {
           "format": "int64",
           "type": "integer",
+		  "readOnly": true,
           "description": "Number of active messages in the queue, topic, or subscription."
         },
         "deadLetterMessageCount": {
           "format": "int64",
           "type": "integer",
+		  "readOnly": true,
           "description": "Number of messages that are dead lettered."
         },
         "scheduledMessageCount": {
           "format": "int64",
           "type": "integer",
+		  "readOnly": true,
           "description": "Number of scheduled messages."
         },
         "transferDeadLetterMessageCount": {
           "format": "int64",
           "type": "integer",
+		  "readOnly": true,
           "description": "Number of messages transferred into dead letters."
         },
         "transferMessageCount": {
           "format": "int64",
           "type": "integer",
+		  "readOnly": true,
           "description": "Number of messages transferred to another queue, topic, or subscription."
         }
       },
@@ -2370,26 +2374,26 @@
         "accessedAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "Last time the message was sent, or a request was received, for this topic."
         },
         "autoDeleteOnIdle": {
           "type": "string",
           "description": "TimeSpan idle interval after which the topic is automatically deleted. The minimum duration is 5 minutes."
         },
-        "entityAvailabilityStatus": {
-          "$ref": "#/definitions/EntityAvailabilityStatus",
-          "description": "Entity availability status for the topic."
-        },
         "createdAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "Exact time the message was created."
         },
         "countDetails": {
-          "$ref": "#/definitions/MessageCountDetails"
+          "readOnly": true,
+		  "$ref": "#/definitions/MessageCountDetails"
         },
         "defaultMessageTimeToLive": {
-          "type": "string",
+          "format": "int64",
+          "type": "integer",
           "description": "Default message time to live value. This is the duration after which the message expires, starting from when the message is sent to Service Bus. This is the default value used when TimeToLive is not set on a message itself."
         },
         "duplicateDetectionHistoryTimeWindow": {
@@ -2408,22 +2412,6 @@
           "type": "boolean",
           "description": "Value that indicates whether the topic to be partitioned across multiple message brokers is enabled."
         },
-        "enableSubscriptionPartitioning": {
-          "type": "boolean",
-          "description": "Value that indicates whether partitioning is enabled or disabled."
-        },
-        "filteringMessagesBeforePublishing": {
-          "type": "boolean",
-          "description": "Whether messages should be filtered before publishing."
-        },
-        "isAnonymousAccessible": {
-          "type": "boolean",
-          "description": "Value that indicates whether the message is accessible anonymously."
-        },
-        "isExpress": {
-          "type": "boolean",
-          "description": ""
-        },
         "maxSizeInMegabytes": {
           "format": "int64",
           "type": "integer",
@@ -2436,6 +2424,7 @@
         "sizeInBytes": {
           "format": "int64",
           "type": "integer",
+		  "readOnly": true,
           "description": "Size of the topic, in bytes."
         },
         "status": {
@@ -2445,6 +2434,7 @@
         "subscriptionCount": {
           "format": "int32",
           "type": "integer",
+		  "readOnly": true,
           "description": "Number of subscriptions."
         },
         "supportOrdering": {
@@ -2454,6 +2444,7 @@
         "updatedAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "The exact time the message was updated."
         }
       }
@@ -2512,6 +2503,7 @@
       "properties": {
         "accessedAt": {
           "type": "string",
+		  "readOnly": true,
           "format": "date-time",
           "description": "Last time there was a receive request to this subscription."
         },
@@ -2520,11 +2512,13 @@
           "description": "TimeSpan idle interval after which the topic is automatically deleted. The minimum duration is 5 minutes."
         },
         "countDetails": {
+		  "readOnly": true,
           "$ref": "#/definitions/MessageCountDetails"
         },
         "createdAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "Exact time the message was created."
         },
         "defaultMessageTimeToLive": {
@@ -2543,14 +2537,6 @@
           "type": "boolean",
           "description": "Value that indicates whether server-side batched operations are enabled."
         },
-        "entityAvailabilityStatus": {
-          "$ref": "#/definitions/EntityAvailabilityStatus",
-          "description": "Entity availability status for the topic."
-        },
-        "isReadOnly": {
-          "type": "boolean",
-          "description": "Value that indicates whether the entity description is read-only."
-        },
         "lockDuration": {
           "type": "string",
           "description": "The lock duration time span for the subscription."
@@ -2563,6 +2549,7 @@
         "messageCount": {
           "format": "int64",
           "type": "integer",
+		  "readOnly": true,
           "description": "Number of messages."
         },
         "requiresSession": {
@@ -2576,6 +2563,7 @@
         "updatedAt": {
           "type": "string",
           "format": "date-time",
+		  "readOnly": true,
           "description": "The exact time the message was updated."
         }
       },
