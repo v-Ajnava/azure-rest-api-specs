@@ -41,6 +41,9 @@
           "Operations"
         ],
         "operationId": "Operations_List",
+        "x-ms-examples": {
+          "RelayNameSpaceListBySubscription": { "$ref": "../examples/NameSpaces/RelayNameSpaceListBySubscription.json" }
+        },
         "description": "Lists all of the available Relay REST API operations.",
         "parameters": [
           {
@@ -72,6 +75,9 @@
           "Namespaces"
         ],
         "operationId": "Namespaces_CheckNameAvailability",
+        "x-ms-examples": {
+          "RelayNameSpaceListBySubscription": { "$ref": "../examples/NameSpaces/RelayNameSpaceCheckNameAvailability.json" }
+        },
         "description": "Check the give namespace name availability.",
         "parameters": [
           {
@@ -1813,9 +1819,10 @@
           "type": "string",
           "description": "Endpoint you can use to perform Service Bus operations."
         },
-        "enabled": {
-          "type": "boolean",
-          "description": "true if client authorization is needed for this relay; otherwise, false."
+        "metricId": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Identifier for Azure Insights metrics"
         }
       },
       "description": "Properties of the Namespace."
