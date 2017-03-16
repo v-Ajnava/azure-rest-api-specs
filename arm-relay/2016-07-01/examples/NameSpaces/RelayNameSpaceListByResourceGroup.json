@@ -9,11 +9,10 @@
       "body": {
         "value": [
           {
-            "id": "/subscriptions/8c246e6a-cbc6-4a87-aff1-d6a886f376ef/resourceGroups/RG1-eg/providers/Microsoft.Relay/namespaces/sdk-RelayNamespace-01",
+            "id": "/subscriptions/8c246e6a-cbc6-4a87-aff1-d6a886f376ef/resourceGroups/RG-eg/providers/Microsoft.Relay/namespaces/sdk-RelayNamespace-01",
             "name": "sdk-RelayNamespace-01",
             "type": "Microsoft.Relay/Namespaces",
             "location": "West US",
-            "kind": "Relay",
             "sku": {
               "name": "Standard",
               "tier": "Standard",
@@ -32,11 +31,10 @@
             }
           },
           {
-            "id": "/subscriptions/8c246e6a-cbc6-4a87-aff1-d6a886f376ef/resourceGroups/RG1-eg/providers/Microsoft.Relay/namespaces/sdk-RelayNamespace-02",
+            "id": "/subscriptions/8c246e6a-cbc6-4a87-aff1-d6a886f376ef/resourceGroups/RG-eg/providers/Microsoft.Relay/namespaces/sdk-RelayNamespace-02",
             "name": "sdk-RelayNamespace-02",
             "type": "Microsoft.Relay/Namespaces",
             "location": "West US",
-            "kind": "Relay",
             "sku": {
               "name": "Standard",
               "tier": "Standard",

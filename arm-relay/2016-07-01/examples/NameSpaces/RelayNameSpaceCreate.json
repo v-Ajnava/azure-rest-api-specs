@@ -23,7 +23,6 @@
         "name": "sdk-RelayNamespace-01",
         "type": "Microsoft.Relay/Namespaces",
         "location": "West US",
-        "kind": "Relay",
         "sku": {
           "name": "Standard",
           "tier": "Standard"
