@@ -1760,11 +1760,6 @@
         "userMetadata": {
           "type": "string",
           "description": "usermetadata is a placeholder to store user-defined string data for the HybridConnection endpoint.e.g. it can be used to store  descriptive data, such as list of teams and their contact information also user-defined configuration settings can be stored."
-        },
-		"listenerType": {
-          "$ref": "#/definitions/ListenerType",
-		  "readOnly": true,
-          "description": "The Listener Type of the Realy"
         }
       },
       "description": "Properties of the WcfRelay Properties."
@@ -2088,24 +2083,6 @@
           }
         }
       }
-    },
-	"ListenerType": {
-      "type": "string",
-      "enum": [
-        "None",
-        "Unicast",
-        "Multicast",
-        "DirectConnection",
-        "HybridConnection",
-        "RelayedConnection",
-        "RelayedHttp",
-        "Junction"
-      ],
-      "x-ms-enum": {
-        "name": "ListenerType",
-        "modelAsString": true
-      },
-      "description": "Specifies the Listener Type of the Realy."
     }
   },
   "parameters": {

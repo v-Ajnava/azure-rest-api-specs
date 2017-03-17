@@ -15,7 +15,6 @@
             "type": "Microsoft.Relay/Namespaces/WcfRelays",
             "properties": {
               "path": "",
-              "listenerType": "RelayedConnection",
               "createdAt": "2017-01-24T00:46:27.0049983Z",
               "updatedAt": "2017-01-24T00:46:27.0049983Z",
               "relayType": "NetTcp",

@@ -14,7 +14,6 @@
         "type": "Microsoft.Relay/WcfRelays",
         "properties": {
           "path": "",
-          "listenerType": "RelayedConnection",
           "listenerCount": 0,
           "createdAt": "2017-03-16T00:26:17.5014661Z",
           "updatedAt": "2017-03-16T00:26:17.5014661Z",
