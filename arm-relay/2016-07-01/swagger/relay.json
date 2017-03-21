@@ -1817,6 +1817,7 @@
         },
         "serviceBusEndpoint": {
           "type": "string",
+          "readOnly": true,
           "description": "Endpoint you can use to perform Service Bus operations."
         },
         "metricId": {
