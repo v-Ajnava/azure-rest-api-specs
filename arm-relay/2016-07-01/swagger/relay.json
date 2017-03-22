@@ -1591,8 +1591,7 @@
           "$ref": "#/definitions/Resource"
         }
       ],
-      "description": "Definition of Resource",
-      "x-ms-azure-resource": true
+      "description": "Definition of Resource"
     },
     "Resource": {
       "properties": {
