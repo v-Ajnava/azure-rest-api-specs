@@ -1,5 +1,5 @@
 {
-  "parameters": {
+  "parameters": { 
     "namespaceName": "sdk-RelayNamespace-01",
     "relayName": "sdk-Relay-wcf-01",
     "authorizationRuleName": "sdk-RelayAuthRules-01",
