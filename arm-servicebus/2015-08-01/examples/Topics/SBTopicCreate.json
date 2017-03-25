@@ -4,7 +4,10 @@
     "resourceGroupName": "Default-ServiceBus-WestUS",
     "topicName": "sdk-Topics1377",
     "api-version": "2015-08-01",
-    "subscriptionId": "e2f361f0-3b27-4503-a9cc-21cfba380093"
+    "subscriptionId": "e2f361f0-3b27-4503-a9cc-21cfba380093",
+	"parameters": {
+	"location": "West US"
+	}
   },
   "responses": {
     "200": { 

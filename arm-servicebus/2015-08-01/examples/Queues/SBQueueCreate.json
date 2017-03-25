@@ -4,7 +4,18 @@
     "resourceGroupName": "Default-ServiceBus-WestUS",
     "queueName": "sdk-Queues8544", 
     "api-version": "2015-08-01",
-    "subscriptionId": "e2f361f0-3b27-4503-a9cc-21cfba380093"
+    "subscriptionId": "e2f361f0-3b27-4503-a9cc-21cfba380093",
+	"parameters":{
+	  "sku": {
+		"name": "Standard",
+		"tier": "Standard"
+	  },
+	  "location": "South Central US",
+	  "tags": {
+		"tag1": "value1",
+		"tag2": "value2"
+	  }
+	}
   },
   "responses": {
     "200": {
