@@ -1460,6 +1460,32 @@
       ],
       "description": "Parameters supplied to the Create Or Update Namespace operation."
     },
+    "NamespaceCreateOrUpdateParameters": {
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "Namespace location."
+        },
+        "sku": {
+          "$ref": "#/definitions/Sku"
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Namespace tags."
+        },
+        "properties": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/NamespaceProperties"
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "description": "Parameters supplied to the Create Or Update Namespace operation."
+    },
     "NamespaceListResult": {
       "properties": {
         "value": {
