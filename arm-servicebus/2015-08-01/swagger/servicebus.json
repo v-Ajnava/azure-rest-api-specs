@@ -1784,7 +1784,6 @@
           "type": "string",
           "readOnly": true,
           "description": "Identifier for Azure Insights metrics"
-        }   
         }
       },
       "description": "Properties of the namespace."
