@@ -2271,6 +2271,18 @@
               "type": "string",
               "description": "Blob container Name"
             },
+			"dataLakeSubscriptionId": {
+              "type": "string",
+              "description": "DataLake SubscriptionId"
+            },
+			"dataLakeAccountName": {
+              "type": "string",
+              "description": "DataLake AccountName"
+            },
+			"dataLakeFolderPath": {
+              "type": "string",
+              "description": "DataLake FolderPath"
+            },
             "archiveNameFormat": {
               "type": "string",
               "description": "Blob naming convention for archive, e.g. {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters (Namespace,EventHub .. etc) are mandatory irrespective of order"
