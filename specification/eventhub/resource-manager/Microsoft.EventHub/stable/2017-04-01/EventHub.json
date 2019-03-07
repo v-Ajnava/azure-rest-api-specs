@@ -2271,15 +2271,15 @@
               "type": "string",
               "description": "Blob container Name"
             },
-			"dataLakeSubscriptionId": {
+            "dataLakeSubscriptionId": {
               "type": "string",
               "description": "DataLake SubscriptionId"
             },
-			"dataLakeAccountName": {
+            "dataLakeAccountName": {
               "type": "string",
               "description": "DataLake AccountName"
             },
-			"dataLakeFolderPath": {
+            "dataLakeFolderPath": {
               "type": "string",
               "description": "DataLake FolderPath"
             },
