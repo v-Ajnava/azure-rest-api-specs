@@ -1241,6 +1241,191 @@
           }
         }
       }
+    },
+	"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/sharedIdentities/default": {
+      "put": {
+        "tags": [
+          "SharedIdentity"
+        ],
+        "x-ms-examples": {
+          "NameSpaceSharedIdentityCreate": {
+            "$ref": "./examples/NameSpaces/SharedIdentity/EHSharedIdentityCreate.json"
+          }
+        },
+        "operationId": "Namespaces_CreateOrUpdateSharedIdentity",
+        "description": "Create or update SharedIdentity for a Namespace.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/resourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/namespaceNameParameter"
+          },
+          {
+            "$ref": "#/parameters/apiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/subscriptionIdParameter"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SharedIdentity"
+            },
+            "description": "The Namespace SharedIdentity."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Namespace SharedIdentity successfully returned.",
+            "schema": {
+              "$ref": "#/definitions/SharedIdentity"
+            }
+          },
+          "default": {
+            "description": "ServiceBus error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "SharedIdentity"
+        ],
+        "x-ms-examples": {
+          "NameSpaceSharedIdentityGet": {
+            "$ref": "./examples/NameSpaces/SharedIdentity/EHSharedIdentitytGet.json"
+          }
+        },
+        "operationId": "Namespaces_GetSharedIdentity",
+        "description": "Gets SharedIdentity for a Namespace.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/resourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/namespaceNameParameter"
+          },
+          {
+            "$ref": "#/parameters/apiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/subscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Namespace SharedIdentity successfully returned.",
+            "schema": {
+              "$ref": "#/definitions/SharedIdentity"
+            }
+          },
+          "default": {
+            "description": "ServiceBus error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      },
+	  "delete": {
+        "tags": [
+          "SharedIdentity"
+        ],
+        "x-ms-examples": {
+          "NameSpaceSharedIdentityCreate": {
+            "$ref": "./examples/NameSpaces/SharedIdentity/EHSharedIdentityCreate.json"
+          }
+        },
+        "operationId": "Namespaces_CreateOrUpdateSharedIdentity",
+        "description": "Create or update SharedIdentity for a Namespace.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/resourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/namespaceNameParameter"
+          },
+          {
+            "$ref": "#/parameters/apiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/subscriptionIdParameter"
+          },
+          {
+            "name": "parameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SharedIdentity"
+            },
+            "description": "The Namespace SharedIdentity."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Namespace SharedIdentity successfully deleted.",
+            "schema": {
+              "$ref": "#/definitions/SharedIdentity"
+            }
+          },
+          "default": {
+            "description": "ServiceBus error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+	"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/sharedIdentities": {
+      "get": {
+        "tags": [
+          "SharedIdentity"
+        ],
+        "operationId": "Namespaces_ListSharedIdentities",
+        "x-ms-examples": {
+          "ListSharedIdentities": {
+            "$ref": "./examples/NameSpaces/EHNameSpaceSharedIdentitiesListAll.json"
+          }
+        },
+        "description": "Gets a list of shared identities for a Namespace.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/NamespaceNameParameter"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Namespace SharedIdentities successfully returned.",
+            "schema": {
+              "$ref": "#/definitions/SharedIdentitiesListResult"
+            }
+          },
+          "default": {
+            "description": "Eventhub error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        }
+      }
     }
   },
   "definitions": {
@@ -1864,6 +2049,65 @@
         }
       },
       "description": "Properties to configure keyVault Properties"
+    },
+	"SharedIdentity": {
+      "x-ms-client-flatten": true,
+      "properties": {
+        "identitytype": {
+          "type": "string",
+          "description": "Enumerates the possible value Identity type, which currently supports only 'SystemAssigned'",
+          "default": "SystemAssigned",
+          "enum": [
+            "SystemAssigned"
+          ],
+          "x-ms-enum": {
+            "name": "IdentityType",
+            "modelAsString": false
+          }
+        },
+		"clientId": {
+          "type": "string",
+          "description": "Client ID from the KeyVault"
+        },
+		"principalId": {
+          "type": "string",
+          "description": "ObjectId from the KeyVault"
+        },
+        "tenantId": {
+          "type": "string",
+          "description": "TenantId from the KeyVault"
+        },
+		"identityUrl": {
+          "type": "string",
+          "description": "Identity Url ID from the KeyVault"
+        },
+		"certRenewAfter": {
+              "format": "date-time",
+              "type": "string",
+              "description": "The Cert renewal Date."
+        },
+		"certificateData": {
+          "type": "string",
+          "description": "base 64 encoded certificate bytes"
+        }
+      },
+      "description": "Properties to configure Shared Identity for Bring your Own Keys"
+    },
+	"SharedIdentitiesListResult": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SharedIdentity"
+          },
+          "description": "Result of the List Shared Identities operation"
+        },
+        "nextLink": {
+          "type": "string",
+          "description": "Link to the next set of results. Not empty if Value contains incomplete list of Shared Identities."
+        }
+      },
+      "description": "The response of the List Shared Identities operation"
     }
   },
   "parameters": {
