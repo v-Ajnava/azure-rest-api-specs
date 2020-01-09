@@ -1249,7 +1249,7 @@
         ],
         "x-ms-examples": {
           "NameSpaceSharedIdentityCreate": {
-            "$ref": "./examples/NameSpaces/SharedIdentity/EHSharedIdentityCreate.json"
+            "$ref": "./examples/NameSpaces/VirtualNetworkRule/EHNetworkRuleSetCreate.json"
           }
         },
         "operationId": "Namespaces_CreateOrUpdateSharedIdentity",
@@ -1279,7 +1279,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Namespace SharedIdentity successfully returned.",
+            "description": "Namespace SharedIdentity successfully saved.",
             "schema": {
               "$ref": "#/definitions/SharedIdentity"
             }
@@ -1298,7 +1298,7 @@
         ],
         "x-ms-examples": {
           "NameSpaceSharedIdentityGet": {
-            "$ref": "./examples/NameSpaces/SharedIdentity/EHSharedIdentitytGet.json"
+            "$ref": "./examples/NameSpaces/VirtualNetworkRule/EHNetworkRuleSetCreate.json"
           }
         },
         "operationId": "Namespaces_GetSharedIdentity",
@@ -1331,18 +1331,20 @@
             }
           }
         }
-      },
-	  "delete": {
+      }
+    },
+	"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/sharedIdentities": {
+      "get": {
         "tags": [
           "SharedIdentity"
         ],
+        "operationId": "Namespaces_ListSharedIdentities",
         "x-ms-examples": {
-          "NameSpaceSharedIdentityCreate": {
-            "$ref": "./examples/NameSpaces/SharedIdentity/EHSharedIdentityCreate.json"
+          "ListSharedIdentities": {
+            "$ref": "./examples/NameSpaces/VirtualNetworkRule/EHNetworkRuleSetCreate.json"
           }
         },
-        "operationId": "Namespaces_CreateOrUpdateSharedIdentity",
-        "description": "Create or update SharedIdentity for a Namespace.",
+        "description": "Gets a list of shared identities for a Namespace.",
         "parameters": [
           {
             "$ref": "#/parameters/resourceGroupNameParameter"
@@ -1355,62 +1357,11 @@
           },
           {
             "$ref": "#/parameters/subscriptionIdParameter"
-          },
-          {
-            "name": "parameters",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/SharedIdentity"
-            },
-            "description": "The Namespace SharedIdentity."
           }
         ],
         "responses": {
           "200": {
-            "description": "Namespace SharedIdentity successfully deleted.",
-            "schema": {
-              "$ref": "#/definitions/SharedIdentity"
-            }
-          },
-          "default": {
-            "description": "ServiceBus error response describing why the operation failed.",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
-          }
-        }
-      }
-    },
-	"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/sharedIdentities": {
-      "get": {
-        "tags": [
-          "SharedIdentity"
-        ],
-        "operationId": "Namespaces_ListSharedIdentities",
-        "x-ms-examples": {
-          "ListSharedIdentities": {
-            "$ref": "./examples/NameSpaces/EHNameSpaceSharedIdentitiesListAll.json"
-          }
-        },
-        "description": "Gets a list of shared identities for a Namespace.",
-        "parameters": [
-          {
-            "$ref": "#/parameters/ResourceGroupNameParameter"
-          },
-          {
-            "$ref": "#/parameters/NamespaceNameParameter"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/SubscriptionIdParameter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Namespace SharedIdentities successfully returned.",
+            "description": "Namespace SharedIdentities List successfully returned.",
             "schema": {
               "$ref": "#/definitions/SharedIdentitiesListResult"
             }
@@ -1715,7 +1666,7 @@
               "readOnly": true,
               "format": "date-time",
               "type": "string",
-              "description": "The time the Namespace was created."
+              "description": "Time the Namespace was created."
             },
             "updatedAt": {
               "readOnly": true,
@@ -1758,7 +1709,7 @@
             },
             "identity": {
               "$ref": "#/definitions/Identity",
-              "description": "Properties of BYOK Identity description"
+              "description": "Properties of Managed Service Identity description"
             },
             "encryption": {
               "$ref": "#/definitions/Encryption",
@@ -1994,18 +1945,19 @@
       "properties": {
         "principalId": {
           "type": "string",
-          "description": "ObjectId from the KeyVault"
+          "description": "ObjectId of System assigned Identity"
         },
         "tenantId": {
           "type": "string",
-          "description": "TenantId from the KeyVault"
+          "description": "TenantId of System assigned Identity"
         },
         "type": {
           "type": "string",
-          "description": "Enumerates the possible value Identity type, which currently supports only 'SystemAssigned'",
-          "default": "SystemAssigned",
+          "description": "Enumerates the possible value Identity type, which currently supports 'None', 'SystemAssigned'",
+          "default": "None",
           "enum": [
-            "SystemAssigned"
+            "SystemAssigned",
+			"None"
           ],
           "x-ms-enum": {
             "name": "IdentityType",
@@ -2013,18 +1965,21 @@
           }
         }
       },
-      "description": "Properties to configure Identity for Bring your Own Keys"
+      "description": "Properties to configure Identity for Namespace"
     },
     "Encryption": {
       "x-ms-client-flatten": true,
       "properties": {
         "keyVaultProperties": {
-          "$ref": "#/definitions/KeyVaultProperties",
+		"type": "array",
+              "items": {
+                "$ref": "#/definitions/KeyVaultProperties"
+              },
           "description": "Properties of KeyVault"
         },
         "keySource": {
           "type": "string",
-          "description": "Enumerates the possible value of keySource for Encryption",
+          "description": "Enumerates the possible value of keySource for Encryption, currently supports only 'Microsoft.KeyVault'",
           "default": "Microsoft.KeyVault",
           "enum": [
             "Microsoft.KeyVault"
@@ -2035,30 +1990,43 @@
           }
         }
       },
+	  "required":[
+		"keyVaultProperties",
+		"keySource"
+	  ],
       "description": "Properties to configure Encryption"
     },
     "KeyVaultProperties": {
       "properties": {
         "keyName": {
           "type": "string",
-          "description": "Name of the Key from KeyVault"
+          "description": "Name of KeyVault Key"
         },
         "keyVaultUri": {
           "type": "string",
           "description": "Uri of KeyVault"
+        },
+		"keyVersion": {
+          "type": "string",
+          "description": "Version of KeyVault Key"
         }
       },
+	  "required": [
+		"keyName",
+		"keyVaultUri"
+	  ],
       "description": "Properties to configure keyVault Properties"
     },
 	"SharedIdentity": {
       "x-ms-client-flatten": true,
       "properties": {
-        "identitytype": {
+        "identityType": {
           "type": "string",
-          "description": "Enumerates the possible value Identity type, which currently supports only 'SystemAssigned'",
-          "default": "SystemAssigned",
+          "description": "Enumerates the possible value Identity type, which currently supports 'None', 'SystemAssigned'",
+          "default": "None",
           "enum": [
-            "SystemAssigned"
+            "None",
+			"SystemAssigned"
           ],
           "x-ms-enum": {
             "name": "IdentityType",
@@ -2067,31 +2035,31 @@
         },
 		"clientId": {
           "type": "string",
-          "description": "Client ID from the KeyVault"
+          "description": "Client ID of System assigned Identity"
         },
 		"principalId": {
           "type": "string",
-          "description": "ObjectId from the KeyVault"
+          "description": "ObjectId of System assigned identity"
         },
         "tenantId": {
           "type": "string",
-          "description": "TenantId from the KeyVault"
+          "description": "TenantId of System assigned identity"
         },
 		"identityUrl": {
           "type": "string",
-          "description": "Identity Url ID from the KeyVault"
+          "description": "Identity Url ID for System assigned identity"
         },
 		"certRenewAfter": {
               "format": "date-time",
               "type": "string",
-              "description": "The Cert renewal Date."
+              "description": "Cert renewal date."
         },
 		"certificateData": {
           "type": "string",
-          "description": "base 64 encoded certificate bytes"
+          "description": "Base 64 encoded certificate bytes"
         }
       },
-      "description": "Properties to configure Shared Identity for Bring your Own Keys"
+      "description": "Properties to configure SharedIdentity for Namespace."
     },
 	"SharedIdentitiesListResult": {
       "properties": {
@@ -2100,7 +2068,7 @@
           "items": {
             "$ref": "#/definitions/SharedIdentity"
           },
-          "description": "Result of the List Shared Identities operation"
+          "description": "Result of List SharedIdentities operation"
         },
         "nextLink": {
           "type": "string",
