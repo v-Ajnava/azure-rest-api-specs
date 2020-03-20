@@ -2,7 +2,7 @@
   "parameters": {
     "namespaceName": "sdk-Namespace-3668",
     "resourceGroupName": "ArunMonocle",
-    "api-version": "2017-04-01",
+    "api-version": "2018-01-01-preview",
     "subscriptionId": "5f750a97-50d9-4e36-8081-c9ee4c0210d4",
     "parameters": {
       "location": "South Central US",
@@ -17,8 +17,7 @@
       "body": {
         "sku": {
           "name": "Standard",
-          "tier": "Standard",
-          "capacity": 1
+          "tier": "Standard"
         },
         "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-3668",
         "name": "sdk-Namespace-3668",
@@ -29,8 +28,6 @@
           "tag4": "value4"
         },
         "properties": {
-          "isAutoInflateEnabled": false,
-          "maximumThroughputUnits": 0,
           "provisioningState": "Updating",
           "metricId": "5f750a97-50d9-4e36-8081-c9ee4c0210d4:sdk-namespace-3668",
           "createdAt": "2017-06-01T21:37:04.46Z",
@@ -43,8 +40,7 @@
       "body": {
         "sku": {
           "name": "Standard",
-          "tier": "Standard",
-          "capacity": 1
+          "tier": "Standard"
         },
         "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-3668",
         "name": "sdk-Namespace-3668",
@@ -55,8 +51,6 @@
           "tag4": "value4"
         },
         "properties": {
-          "isAutoInflateEnabled": false,
-          "maximumThroughputUnits": 0,
           "provisioningState": "Updating",
           "metricId": "5f750a97-50d9-4e36-8081-c9ee4c0210d4:sdk-namespace-3668",
           "createdAt": "2017-06-01T21:37:04.46Z",
