@@ -10,9 +10,9 @@
       "body": {
         "value": [
           {
-            "id": "/subscriptions/Subscription/resourceGroups/ResourceGroup/providers/Microsoft.EventHub/namespaces/sdk-Namespace-6019/virtualnetworkrules/sdk-VirtualNetworkRules-9191",
+            "id": "/subscriptions/Subscription/resourceGroups/ResourceGroup/providers/Microsoft.Relay/namespaces/sdk-Namespace-6019/virtualnetworkrules/sdk-VirtualNetworkRules-9191",
             "name": "sdk-VirtualNetworkRules-9191",
-            "type": "Microsoft.EventHub/Namespaces/VirtualNetworkRules",
+            "type": "Microsoft.Relay/Namespaces/VirtualNetworkRules",
             "properties": {
               "virtualNetworkSubnetId": "/subscriptions/Subscription/resourceGroups/ResourceGroup/providers/Microsoft.Network/virtualNetworks/sbehvnettest/subnets/default"
             }

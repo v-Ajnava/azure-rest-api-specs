@@ -8,9 +8,9 @@
   "responses": {
     "200": {
       "body": {
-        "id": "/subscriptions/subscriptionid/resourceGroups/resourcegroupid/providers/Microsoft.EventHub/namespaces/sdk-Namespace-9659/networkruleset/default",
+        "id": "/subscriptions/subscriptionid/resourceGroups/resourcegroupid/providers/Microsoft.Relay/namespaces/sdk-Namespace-9659/networkruleset/default",
         "name": "default",
-        "type": "Microsoft.EventHub/Namespaces/NetworkRuleSet",
+        "type": "Microsoft.Relay/Namespaces/NetworkRuleSet",
         "properties": {
           "defaultAction": "Deny",
           "virtualNetworkRules": [

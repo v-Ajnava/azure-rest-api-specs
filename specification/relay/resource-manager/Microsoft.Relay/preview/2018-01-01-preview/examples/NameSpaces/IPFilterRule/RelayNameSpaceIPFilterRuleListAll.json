@@ -10,9 +10,9 @@
       "body": {
         "value": [
           {
-            "id": "/subscriptions/Subscription/resourceGroups/ResourceGroup/providers/Microsoft.EventHub/namespaces/sdk-Namespace-5232/ipfilterrules/sdk-IPFilterRules-7337",
+            "id": "/subscriptions/Subscription/resourceGroups/ResourceGroup/providers/Microsoft.Relay/namespaces/sdk-Namespace-5232/ipfilterrules/sdk-IPFilterRules-7337",
             "name": "sdk-IPFilterRules-7337",
-            "type": "Microsoft.EventHub/Namespaces/IpFilterRules",
+            "type": "Microsoft.Relay/Namespaces/IpFilterRules",
             "properties": {
               "ipMask": "13.78.143.246/32",
               "action": "Accept",

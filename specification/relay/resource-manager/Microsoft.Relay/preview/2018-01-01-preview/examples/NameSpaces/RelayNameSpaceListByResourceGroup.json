@@ -35,9 +35,9 @@
               "tier": "Standard",
               "capacity": 0
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/oaisdjfoiasdjfoiajsdfoijasd",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/oaisdjfoiasdjfoiajsdfoijasd",
             "name": "oaisdjfoiasdjfoiajsdfoijasd",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -56,9 +56,9 @@
               "tier": "Standard",
               "capacity": 0
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/abc123",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/abc123",
             "name": "abc123",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -77,9 +77,9 @@
               "tier": "Standard",
               "capacity": 1
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/sdk-Namespace-5849",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-5849",
             "name": "sdk-Namespace-5849",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {
               "tag1": "value1",
@@ -101,9 +101,9 @@
               "tier": "Standard",
               "capacity": 1
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/sdk-Namespace-4984",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-4984",
             "name": "sdk-Namespace-4984",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -122,9 +122,9 @@
               "tier": "Standard",
               "capacity": 1
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/sdk-Namespace-5606",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-5606",
             "name": "sdk-Namespace-5606",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -143,9 +143,9 @@
               "tier": "Standard",
               "capacity": 1
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/sdk-Namespace-7703",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-7703",
             "name": "sdk-Namespace-7703",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -164,9 +164,9 @@
               "tier": "Standard",
               "capacity": 3
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/zzzzzzzzzzzzzzzzzzzzzz-00001",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/zzzzzzzzzzzzzzzzzzzzzz-00001",
             "name": "zzzzzzzzzzzzzzzzzzzzzz-00001",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -185,9 +185,9 @@
               "tier": "Standard",
               "capacity": 1
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/sdk-Namespace-3919",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-3919",
             "name": "sdk-Namespace-3919",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -206,9 +206,9 @@
               "tier": "Standard",
               "capacity": 0
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/aiosdjfaoidjasdoijasdfoijasdfofijsdf",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/aiosdjfaoidjasdoijasdfoijasdfofijsdf",
             "name": "aiosdjfaoidjasdoijasdfoijasdfofijsdf",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -227,9 +227,9 @@
               "tier": "Standard",
               "capacity": 1
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/sdk-Namespace-3413",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-3413",
             "name": "sdk-Namespace-3413",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -248,9 +248,9 @@
               "tier": "Standard",
               "capacity": 1
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/sdk-Namespace-8695",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-8695",
             "name": "sdk-Namespace-8695",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -269,9 +269,9 @@
               "tier": "Standard",
               "capacity": 1
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/sdk-Namespace-4801",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-4801",
             "name": "sdk-Namespace-4801",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
@@ -290,9 +290,9 @@
               "tier": "Standard",
               "capacity": 1
             },
-            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.EventHub/namespaces/sdk-Namespace-2812",
+            "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/ArunMonocle/providers/Microsoft.Relay/namespaces/sdk-Namespace-2812",
             "name": "sdk-Namespace-2812",
-            "type": "Microsoft.EventHub/Namespaces",
+            "type": "Microsoft.Relay/Namespaces",
             "location": "South Central US",
             "tags": {},
             "properties": {
