@@ -4,7 +4,7 @@
     "title": "Relay API",
     "description": "Use these API to manage Azure Relay resources through Azure Resource Manager.",
     "version": "2018-01-01-preview",
-	"x-ms-code-generation-settings": {
+    "x-ms-code-generation-settings": {
       "name": "RelayManagementClient"
     }
   },
@@ -92,7 +92,7 @@
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
           },
-		  {
+          {
             "name": "parameters",
             "in": "body",
             "required": true,
@@ -118,14 +118,14 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Relay/namespaces":{
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Relay/namespaces": {
       "get": {
         "tags": [
           "Namespaces"
         ],
         "operationId": "Namespaces_List",
         "x-ms-examples": {
-           "RelayNameSpaceListBySubscription": {
+          "RelayNameSpaceListBySubscription": {
             "$ref": "./examples/NameSpaces/RelayNameSpaceListBySubscription.json"
           }
         },
@@ -194,12 +194,12 @@
             }
           }
         },
-       "x-ms-pageable": {
+        "x-ms-pageable": {
           "nextLinkName": "nextLink"
-		  }
         }
-      },
-	"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}": {
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}": {
       "put": {
         "tags": [
           "Namespaces"
@@ -305,7 +305,7 @@
           "Namespaces"
         ],
         "operationId": "Namespaces_Get",
-		"x-ms-examples": {
+        "x-ms-examples": {
           "RelayNameSpaceGet": {
             "$ref": "./examples/NameSpaces/RelayNameSpaceGet.json"
           }
@@ -339,12 +339,12 @@
             }
           }
         }
-      },   
+      },
       "patch": {
         "tags": [
           "Namespaces"
         ],
-       "operationId": "Namespaces_Update",
+        "operationId": "Namespaces_Update",
         "x-ms-examples": {
           "RelayNameSpaceUpdate": {
             "$ref": "./examples/NameSpaces/RelayNameSpaceUpdate.json"
@@ -396,10 +396,9 @@
         }
       }
     }
-	 
   },
   "definitions": {
-	"TrackedResource": {
+    "TrackedResource": {
       "properties": {
         "location": {
           "type": "string",
@@ -427,7 +426,7 @@
       ],
       "description": "Definition of resource."
     },
-	"ResourceNamespacePatch": {
+    "ResourceNamespacePatch": {
       "properties": {
         "tags": {
           "type": "object",
@@ -592,7 +591,7 @@
       "required": [
         "name"
       ]
-    },      
+    },
     "UnavailableReason": {
       "type": "string",
       "enum": [
@@ -702,7 +701,7 @@
         }
       }
     }
-   },
+  },
   "parameters": {
     "SubscriptionIdParameter": {
       "name": "subscriptionId",
@@ -737,7 +736,7 @@
       "maxLength": 50,
       "x-ms-parameter-location": "method",
       "description": "The namespace name"
-    },       
+    },
     "relayNameParameter": {
       "name": "relayName",
       "in": "path",

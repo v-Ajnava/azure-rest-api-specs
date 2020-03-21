@@ -393,7 +393,7 @@
           {
             "sku": {
               "name": "Standard",
-              "tier": "Standard",
+              "tier": "Standard"
             },
             "id": "/subscriptions/5f750a97-50d9-4e36-8081-c9ee4c0210d4/resourceGroups/testDC/providers/Microsoft.Relay/namespaces/TestNamespace1",
             "name": "TestNamespace1",
