@@ -1793,6 +1793,10 @@
                 "$ref": "#/definitions/NWRuleSetIpRules"
               },
               "description": "List of IpRules"
+            },
+            "trustedServiceAccessEnabled": {
+              "type": "boolean",
+              "description": "Value that indicates whether trusted service access is enabled or not"
             }
           }
         }
