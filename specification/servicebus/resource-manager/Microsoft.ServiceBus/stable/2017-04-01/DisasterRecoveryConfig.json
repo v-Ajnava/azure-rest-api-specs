@@ -782,6 +782,16 @@
     }
   },
   "parameters": {
+    "AliasNameParameter": {
+      "name": "alias",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "x-ms-parameter-location": "method",
+      "description": "The Disaster Recovery configuration name"
+    },
     "SubscriptionIdParameter": {
       "name": "subscriptionId",
       "in": "path",

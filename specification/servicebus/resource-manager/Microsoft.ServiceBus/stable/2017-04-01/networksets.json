@@ -296,6 +296,22 @@
         }
       ],
       "description": "Description of NetworkRuleSet resource."
+    },
+    "NetworkRuleSetListResult": {
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NetworkRuleSet"
+          },
+          "description": "Result of the List NetworkRuleSet operation."
+        },
+        "nextLink": {
+          "type": "string",
+          "description": "Link to the next set of results. Not empty if Value contains incomplete list of NetworkRuleSet."
+        }
+      },
+      "description": "The response of the List NetworkRuleSet operation."
     }
   },
   "parameters": {
