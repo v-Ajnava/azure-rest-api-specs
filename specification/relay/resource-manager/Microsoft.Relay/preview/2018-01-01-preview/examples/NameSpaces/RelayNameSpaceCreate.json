@@ -58,7 +58,6 @@
           "serviceBusEndpoint": "https://sdk-Namespace-5849.servicebus.windows-int.net:443/"
         }
       }
-    },
-    "202": {}
+    }   
   }
 }
