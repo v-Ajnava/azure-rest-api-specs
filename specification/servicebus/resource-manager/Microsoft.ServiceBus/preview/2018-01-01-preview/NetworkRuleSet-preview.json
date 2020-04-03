@@ -127,6 +127,26 @@
     }
   },
   "definitions": {
+    "VirtualNetworkRule": {
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten": true,
+          "properties": {
+            "virtualNetworkSubnetId": {
+              "type": "string",
+              "description": "Resource ID of Virtual Network Subnet"
+            }
+          },
+          "description": "Properties supplied to create or update VirtualNetworkRules"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ],
+      "description": "Single item in a List or Get VirtualNetworkRules operation"
+    },
     "TrackedResource": {
       "properties": {
         "location": {
