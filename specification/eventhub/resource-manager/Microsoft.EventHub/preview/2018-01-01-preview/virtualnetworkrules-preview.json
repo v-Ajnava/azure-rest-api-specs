@@ -39,7 +39,7 @@
         "tags": [
           "Namespaces"
         ],
-        "operationId": "Namespaces_ListVirtualNetworkRules",
+        "operationId": "VirtualNetworkRules",
         "x-ms-examples": {
           "ListIpFilterRules": {
             "$ref": "./examples/NameSpaces/VirtualNetworkRule/EHNameSpaceVirtualNetworkRuleListAll.json"
@@ -82,7 +82,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/virtualnetworkrules/{virtualNetworkRuleName}": {
       "put": {
         "tags": [
-          "Namespaces"
+          "VirtualNetworkRules"
         ],
         "operationId": "Namespaces_CreateOrUpdateVirtualNetworkRule",
         "x-ms-examples": {
