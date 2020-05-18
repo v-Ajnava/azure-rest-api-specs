@@ -37,7 +37,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/clusters/{clusterName}/quotaConfiguration/default": {
       "patch": {
         "tags": [
-          "Event Hubs Cluster Configuration"
+          "QuotaConfiguration"
         ],
         "operationId": "Configuration_Patch",
         "parameters": [
