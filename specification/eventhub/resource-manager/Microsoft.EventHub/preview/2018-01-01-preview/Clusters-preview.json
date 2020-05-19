@@ -37,7 +37,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/clusters": {
       "get": {
         "tags": [
-          "Clusters"
+          "Event Hubs Clusters"
         ],
         "operationId": "Clusters_ListByResourceGroup",
         "x-ms-examples": {
@@ -79,7 +79,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/clusters/{clusterName}": {
       "get": {
         "tags": [
-          "Clusters"
+          "Event Hubs Clusters"
         ],
         "operationId": "Clusters_Get",
         "x-ms-examples": {
@@ -274,7 +274,7 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/clusters/{clusterName}/namespaces": {
       "get": {
         "tags": [
-          "Clusters"
+          "Event Hubs Namespace Enumeration in Cluster"
         ],
         "operationId": "Clusters_ListNamespaces",
         "parameters": [
