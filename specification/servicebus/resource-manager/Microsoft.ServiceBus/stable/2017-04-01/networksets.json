@@ -194,6 +194,18 @@
       },
       "description": "Description of NetWorkRuleSet - IpRules resource."
     },
+	"Subnet": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Resource ID of Virtual Network Subnet"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "description": "Properties supplied for Subnet"
+    },
     "NWRuleSetVirtualNetworkRules": {
       "x-ms-client-flatten": true,
       "properties": {

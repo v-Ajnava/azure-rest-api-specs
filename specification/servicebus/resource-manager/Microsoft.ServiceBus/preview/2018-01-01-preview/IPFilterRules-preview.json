@@ -274,5 +274,5 @@
       "description": "The response from the List namespace operation."
     }
   },
-  "parameters": { }
+  "parameters": {}
 }
