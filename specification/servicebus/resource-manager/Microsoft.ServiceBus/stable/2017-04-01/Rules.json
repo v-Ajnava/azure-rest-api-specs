@@ -416,6 +416,31 @@
         }
       },
       "description": "Represents the filter actions which are allowed for the transformation of a message that have been matched by a filter expression."
+    },
+    "SqlRuleAction": {
+      "type": "object",
+      "properties": {
+        "sqlExpression": {
+          "type": "string",
+          "description": "SQL expression. e.g. MyProperty='ABC'"
+        },
+        "compatibilityLevel": {
+          "format": "int32",
+          "type": "integer",
+          "description": "This property is reserved for future use. An integer value showing the compatibility level, currently hard-coded to 20."
+        },
+        "requiresPreprocessing": {
+          "type": "boolean",
+          "default": true,
+          "description": "Value that indicates whether the rule action requires preprocessing."
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Action"
+        }
+      ],
+      "description": "Represents set of actions written in SQL language-based syntax that is performed against a ServiceBus.Messaging.BrokeredMessage "
     }
   },
   "parameters": { }

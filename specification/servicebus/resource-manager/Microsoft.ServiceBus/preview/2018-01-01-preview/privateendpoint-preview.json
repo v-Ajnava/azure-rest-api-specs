@@ -535,16 +535,17 @@
       },
       "description": "The response of the List Namespace operation."
     },
-    "SBNamespace": {
+    "PrivateEndpointConnection": {
       "properties": {
-        "sku": {
-          "$ref": "#/definitions/SBSku",
-          "description": "Properties of SKU"
-        },
-        "properties": {
+        "PrivateEndpoint": {
           "x-ms-client-flatten": true,
-          "$ref": "#/definitions/SBNamespaceProperties",
-          "description": "Properties of the namespace."
+          "$ref": "#/definitions/PrivateEndpointProperties",
+          "description": "Properties of privateEndpoint."
+        },
+		"PrivateLinkServiceConnectionState": {
+          "x-ms-client-flatten": true,
+          "$ref": "#/definitions/PrivateLinkServiceConnectionStateProperties",
+          "description": "Properties of privateEndpoint."
         }
       },
       "allOf": [
@@ -552,26 +553,7 @@
           "$ref": "../../common/v1/definitions.json#/definitions/TrackedResource"
         }
       ],
-      "description": "Description of a namespace resource."
-    },
-    "SBNamespaceUpdateParameters": {
-      "properties": {
-        "sku": {
-          "$ref": "#/definitions/SBSku",
-          "description": "Properties of SKU"
-        },
-        "properties": {
-          "x-ms-client-flatten": true,
-          "$ref": "#/definitions/SBNamespaceProperties",
-          "description": "Properties of the namespace."
-        }
-      },
-      "allOf": [
-        {
-          "$ref": "#/definitions/ResourceNamespacePatch"
-        }
-      ],
-      "description": "Description of a namespace resource."
+      "description": "Description of PrivateEndpointConnection."
     },
     "SBNamespaceProperties": {
       "properties": {
@@ -683,40 +665,39 @@
       },
       "description": "Properties to configure Identity for Bring your Own Keys"
     },
-    "Encryption": {
+    "PrivateLinkServiceConnectionStateProperties": {
       "x-ms-client-flatten": true,
       "properties": {
-        "keyVaultProperties": {
-          "$ref": "#/definitions/KeyVaultProperties",
-          "description": "Properties of KeyVault"
-        },
-        "keySource": {
+        "Description": {
           "type": "string",
-          "description": "Enumerates the possible value of keySource for Encryption",
-          "default": "Microsoft.KeyVault",
+          "description": "Description of the Status"
+        },
+        "Status": {
+          "type": "string",
+          "description": "Status of Private LinkService Connection State",
+          "default": "Pending",
           "enum": [
-            "Microsoft.KeyVault"
+            "Disconnected",
+			"Pending",
+			"Approved",
+			"Rejected"
           ],
           "x-ms-enum": {
-            "name": "keySource",
+            "name": "PrivateLinkConnectionStatus",
             "modelAsString": false
           }
         }
       },
       "description": "Properties to configure Encryption"
     },
-    "KeyVaultProperties": {
+    "PrivateEndpointProperties": {
       "properties": {
-        "keyName": {
+        "Id": {
           "type": "string",
-          "description": "Name of the Key from KeyVault"
-        },
-        "keyVaultUri": {
-          "type": "string",
-          "description": "Uri of KeyVault"
+          "description": "ID of the PRivate Endpoint"
         }
       },
-      "description": "Properties to configure keyVault Properties"
+      "description": "Properties to PrivateEndpoint Properties"
     }
   },
   "parameters": { }
