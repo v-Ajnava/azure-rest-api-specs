@@ -343,6 +343,11 @@
           "Namespaces PrivateEndpointConnections"
         ],
         "operationId": "PrivateEndpointConnections_CreateOrUpdate",
+		"x-ms-examples": {
+          "NameSpaceListByResourceGroup": {
+            "$ref": "./examples/NameSpaces/PrivateEndPointConnectionCreate.json"
+          }
+        },
         "description": "Creates or updates PrivateEndpointConnections of service namespace.",
         "externalDocs": {
           "url": "https://msdn.microsoft.com/en-us/library/azure/mt639408.aspx"
@@ -386,9 +391,6 @@
               "$ref": "#/definitions/PrivateEndpointConnection"
             }
           },
-          "202": {
-            "description": "Request to update Status of PrivateEndPoint Connection accepted"
-          },
           "default": {
             "description": "ServiceBus error response describing why the operation failed.",
             "schema": {
@@ -402,6 +404,11 @@
           "Namespaces PrivateEndpointConnections"
         ],
         "operationId": "PrivateEndpointConnections_Delete",
+		"x-ms-examples": {
+          "NameSpaceListByResourceGroup": {
+            "$ref": "./examples/NameSpaces/PrivateEndPointConnectionDelete.json"
+          }
+        },
         "description": "Deletes an existing namespace. This operation also removes all associated resources under the namespace.",
         "externalDocs": {
           "url": "https://msdn.microsoft.com/en-us/library/azure/mt639389.aspx"
@@ -447,6 +454,11 @@
           "Namespaces PrivateEndpointConnections"
         ],
         "operationId": "PrivateEndpointConnections_Get",
+		"x-ms-examples": {
+          "NameSpaceListByResourceGroup": {
+            "$ref": "./examples/NameSpaces/PrivateEndPointConnectionGet.json"
+          }
+        },
         "description": "Gets a description for the specified Private Endpoint Connection name.",
         "externalDocs": {
           "url": "https://msdn.microsoft.com/en-us/library/azure/mt639379.aspx"
@@ -488,8 +500,13 @@
       "get": {
         "tags": [
           "Namespaces PrivateLinkResources"
-        ],
+        ],		
         "operationId": "PrivateLinkResources_Get",
+		"x-ms-examples": {
+          "NameSpaceListByResourceGroup": {
+            "$ref": "./examples/NameSpaces/PrivateLinkResourcesGet.json"
+          }
+        },
         "description": "Gets a description for the specified namespace.",
         "externalDocs": {
           "url": "https://msdn.microsoft.com/en-us/library/azure/mt639379.aspx"
@@ -643,8 +660,11 @@
           "description": "Properties of BYOK Encryption description"
         },
 		"privateEndpointConnections": {
-          "$ref": "#/definitions/PrivateEndpointConnectionListResult",
-          "description": "A collection of private endpoint connection resources."
+          "description": "A collection of private endpoint connection resources.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrivateEndpointConnection"
+          }
         }		
       },
       "description": "Properties of the namespace."
@@ -773,13 +793,6 @@
           "$ref": "#/definitions/PrivateEndpoint",
           "description": "The Private Endpoint resource for this Connection."
         },
-        "groupIds": {
-          "description": "GroupIds from the private link service resource.",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "privateLinkServiceConnectionState": {
           "$ref": "#/definitions/ConnectionState",
           "description": "Details about the state of the connection."
@@ -814,7 +827,6 @@
     },
 	"ConnectionState": {
       "description": "ConnectionState information.",
-      "type": "object",
       "properties": {
         "status": {
           "description": "Status of the connection.",
