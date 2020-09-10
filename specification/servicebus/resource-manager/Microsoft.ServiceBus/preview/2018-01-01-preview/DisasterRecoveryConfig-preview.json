@@ -512,7 +512,7 @@
     "IsSafeFailover": {
       "properties": {
         "value": {
-          "type": "bool",
+          "type": "boolean",
           "items": {
             "$ref": "#/definitions/IsSafeFailover"
           },
