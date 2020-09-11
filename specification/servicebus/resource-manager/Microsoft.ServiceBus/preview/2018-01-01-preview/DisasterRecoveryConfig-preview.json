@@ -509,17 +509,6 @@
     }
   },
   "definitions": {
-    "IsSafeFailover": {
-      "properties": {
-        "value": {
-          "type": "boolean",
-          "items": {
-            "$ref": "#/definitions/IsSafeFailover"
-          },
-          "description": "Safe failover is to indicate the service should wait for pending replication to finish before switching to the secondary."
-        }       
-      }
-    },
     "SBAuthorizationRuleListResult": {
       "properties": {
         "value": {
@@ -705,6 +694,10 @@
               "format": "int64",
               "type": "integer",
               "description": "Number of entities pending to be replicated."
+            },
+            "IsSafeFailover": {
+              "type": "boolean",
+              "description": "Safe failover is to indicate the service should wait for pending replication to finish before switching to the secondary."
             },
             "partnerNamespace": {
               "type": "string",
