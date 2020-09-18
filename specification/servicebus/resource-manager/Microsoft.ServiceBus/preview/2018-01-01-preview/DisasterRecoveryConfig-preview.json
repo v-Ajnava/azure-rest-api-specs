@@ -339,6 +339,15 @@
           },
           {
             "$ref": "../../../common/v1/definitions.json#/parameters/SubscriptionIdParameter"
+          },
+		  {
+            "name": "parameters",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/FailoverProperties"
+            },
+            "description": "Parameters for Disaster Recovery Configs - Failover"
           }
         ],
         "responses": {
@@ -670,6 +679,21 @@
       },
       "description": "Description of a Check Name availability request properties."
     },
+	"FailoverProperties": {
+      "properties": {
+        "properties": {
+          "x-ms-client-flatten": true,
+          "properties": {
+            "IsSafeFailover": {
+              "type": "boolean",
+              "description": "Safe failover is to indicate the service should wait for pending replication to finish before switching to the secondary."
+            }
+          },
+          "description": "Properties for Disaster Recovery configurations - Failover Operation)"
+        }
+      },
+      "description": "Properties for Disaster Recovery configurations - Failover Operation"
+    }
     "ArmDisasterRecovery": {
       "properties": {
         "properties": {
